@@ -1,0 +1,83 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.main {
+    min-height: 700px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    min-height: 150px;
+    width: 500px;
+    border: 1px solid #000;
+}
+
+.result {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.result-title {
+    padding: 4px;
+    flex: 1;
+    text-align: center;
+    margin: 4px;
+    font-size: 16px;
+}
+
+.result-list {
+    padding: 6px;
+    flex: 1;
+    text-align: center;
+    margin: 8px;
+    font-size: 16px;
+}
+
+.input-cpu {
+    display: none;
+}
+
+.input-cpu.open {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.input-title {
+    padding: 4px;
+    flex: 1;
+    text-align: center;
+    margin: 8px;
+    font-size: 16px;
+}
+
+.cpu-text {
+    padding: 6px;
+    flex: 1;
+    text-align: center;
+    margin: 8px;
+    font-size: 16px;
+}
+
+.cpu-btn {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 20px;
+}
+
+#btnAdd {
+    padding: 6px;
+    font-size: 16px;
+}
+
+#btnCancel {
+    padding: 6px;
+    font-size: 16px;
+}

@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <form id="msgForm" action="SendMsg.aspx" method="post" onsubmit="return valid()">
+        <input type="text" name="txtMessage" id="txtMessage">
+        <input type="submit" value="Send" id="btnSend">
+    </form>
+    <style>
+        * {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+
+        #msgForm {
+            width: 100%;
+        }
+
+        #txtMessage {
+            width: 90%;
+            height: max-content;
+            padding: 16px;
+        }
+
+        #btnSend {
+            width: 9.2%;
+            padding: 16px 0;
+        }
+    </style>
+
+    <script>
+        function valid() {
+            let msg = document.getElementById("txtMessage").value.trim();
+            if (msg == "") {
+                return false;
+            } else {
+                msg = replace(/&/g, "&amp").replace(/>/g, "&gt").replace(/</g, "&lt").replace(/"/g, "&quot");
+                document.getElementById("txtMessage").value = msg;
+                return true;
+            }
+        }
+    </script>
+</body>
+</html>

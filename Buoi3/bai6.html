@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 6</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .main {
+            min-height: 600px;
+            display: flex;
+            align-items: center;
+        }
+
+        .form {
+            width: 500px;
+            margin: auto;
+            border: 1px solid #000;
+            padding: 20px;
+        }
+
+        .form-group {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            padding: 8px;
+        }
+
+        .form-title {
+            font-size: 16px;
+            flex: 1;
+        }
+
+        .date {
+            flex: 1;
+            padding: 6px;
+        }
+
+        .result {
+            flex: 1;
+            padding: 6px;
+        }
+
+        #confirm {
+            padding: 8px;
+            font-size: 14px;
+        }
+
+        #reset {
+            padding: 8px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <form action="" class="form" id="form" method="get">
+            <div class="form-group">
+                <p class="form-title">Ngày tháng năm sinh:</p>
+                <input type="date" class="date" id="dob">
+            </div>
+
+            <div class="form-group">
+                <p class="form-title">Cung hoàng đạo:</p>
+                <input type="text" class="result" id="result" disabled>
+            </div>
+
+            <div class="form-group">
+                <input type="button" value="Xác định" id="confirm" onclick="check()">
+                <input type="button" value="Huỷ" id="reset" onclick="resetZodiac()">
+            </div>
+        </form>
+    </div>
+
+    <script>
+        function resetZodiac() {
+            document.getElementById("dob").value="";
+            document.getElementById("result").value="";
+        }
+
+        function check() {
+            let dob = document.getElementById("dob").value;
+            let output= "";
+            let result = document.getElementById("result");
+
+            let arrDob = dob.split('-');
+            let day = parseInt(arrDob[2]);
+            let month = parseInt(arrDob[1]);
+            switch(month) {
+                case 1:
+                    if(day > 19) {
+                        output = "Bảo Bình";
+                    }else {
+                        output ="Ma Kết";
+                    }
+                    break;
+                case 2:
+                    if(day > 18) {
+                        output ="Song Ngư";
+                    }else{
+                        output= "Bảo Bình";
+                    }
+                    break;
+                case 3:
+                    if(day >20) {
+                        output = "Bạch Dương";
+                    }else{
+                        output="Song Ngư";
+                    }
+                    break;
+                case 4:
+                    if(day>20){
+                        output="Kim Ngưu";
+                    }else {
+                        output="Bạch Dương";
+                    }
+                    break;
+                case 5:
+                    if(day>20){
+                        output="Song Tử";
+                    }else {
+                        output="Kim Ngưu";
+                    }
+                    break;
+                case 6:
+                    if(day>21){
+                        output="Cự Giải";
+                    }else {
+                        output="Song Tử";
+                    }
+                    break;
+                case 7:
+                    if(day>22){
+                        output="Sư Tử";
+                    }else {
+                        output="Cự Giải";
+                    }
+                    break;
+                case 8:
+                    if(day>22){
+                        output="Xử Nữ";
+                    }else {
+                        output="Sư Tử";
+                    }
+                    break;
+                case 9:
+                    if(day>22){
+                        output="Thiên Bình";
+                    }else {
+                        output="Xử Nữ";
+                    }
+                    break;
+                case 10:
+                    if(day>23){
+                        output="Bọ Cạp";
+                    }else {
+                        output="Thiên Bình";
+                    }
+                    break;
+                case 11:
+                    if(day>22){
+                        output="Nhân Mã";
+                    }else {
+                        output="Bọ Cạp";
+                    }
+                    break;
+                case 12:
+                    if(day>21){
+                        output="Ma Kết";
+                    }else {
+                        output="Nhân Mã";
+                    }
+                    break;
+            }
+            result.value=output;
+        }
+    </script>
+</body>
+</html>

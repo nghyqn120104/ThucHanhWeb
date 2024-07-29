@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./bai8.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="main">
+        <div class="container">
+            <div class="data">
+                <table id="table">
+                    <tr>
+                        <td class="border-column">STT</td>
+                        <td class="border-column">Tên VXL</td>
+                        <td class="border-column">Hãng SX</td>
+                        <td class="border-column">Ngày ra mắt</td>
+                        <td class="border-column">Giá (vnđ)</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="addData">
+                <div class="addData-input">
+                    <div class="addData-infor">
+                        <label for="" class="title">Tên VXL</label>
+                        <input type="text" class="vxl-text" value="">
+                    </div>
+    
+                    <div class="addData-infor">
+                        <label for="" class="title">Hãng SX</label>
+                        <input type="text" class="brand-text" value="">
+                    </div>
+    
+                    <div class="addData-infor">
+                        <label for="" class="title">Ngày ra mắt</label>
+                        <input type="date" class="date-text" value="">
+                    </div>
+    
+                    <div class="addData-infor">
+                        <label for="" class="title">Giá</label>
+                        <input type="number" class="price-text" value="">
+                    </div>
+                </div>
+
+                <div class="addData-btn">
+                    <input type="button" value="Thêm" id="btnAdd" onclick="btnAdd()">
+                    <input type="button" value="Huỷ" id="btnCancel" onclick="btnCancel()">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./bai8.js"></script>
+</body>
+</html>

@@ -1,0 +1,165 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .main {
+            min-height: 1000px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            min-height: 500px;
+            min-width: 400px;
+        }
+
+        .addData {
+            margin-top: 150px;
+            border: 1px solid #000;
+        }
+
+        .addData-input {
+            margin-top: 20px;
+        }
+
+        .addData-infor {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            margin: 8px;
+        }
+
+        .title {
+            flex: 1;
+            text-align: center;
+            font-size: 14px;
+            padding: 4px;
+        }
+
+        .vxl-text,
+        .brand-text,
+        .date-text,
+        .price-text {
+            flex: 1;
+            margin-right: 8px;
+            padding: 4px;
+            font-size: 14px;
+        }
+
+        .addData-btn {
+            margin: 20px;
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        #btnAdd,
+        #btnCancel {
+            font-size: 14px;
+            padding: 8px;
+        }
+    </style>
+</head>
+<body>
+    <form method="get" action="XuLy.aspx" id="cpuForm" onsubmit="return checkValidate()">
+        <div class="main">
+            <div class="container">
+                <div class="addData">
+                    <div class="addData-input">
+                        <div class="addData-infor">
+                            <label for="" class="title">Tên VXL</label>
+                            <input type="text" class="vxl-text" id="Name" name="Name" value="">
+                        </div>
+
+                        <div class="addData-infor">
+                            <label for="" class="title">Hãng SX</label>
+                            <input type="text" class="brand-text" id="Brand" name="Brand" value="">
+                        </div>
+
+                        <div class="addData-infor">
+                            <label for="" class="title">Ngày ra mắt</label>
+                            <input type="date" class="date-text" id="Date" name="Date" value="">
+                        </div>
+
+                        <div class="addData-infor">
+                            <label for="" class="title">Giá</label>
+                            <input type="number" class="price-text"id="Price" name="Price" value="">
+                        </div>
+                    </div>
+
+                    <div class="addData-btn">
+                        <input type="submit" value="Thêm" id="btnAdd">
+                        <input type="reset" value="Huỷ" id="btnCancel">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <script>
+        let inputVXL = document.querySelector('.vxl-text');
+        let inputBrand = document.querySelector('.brand-text');
+        let inputDate = document.querySelector('.date-text');
+        let inputPrice = document.querySelector('.price-text');
+
+        function checkValidate() {
+            let name = inputVXL.value.trim();
+            let brand = inputBrand.value.trim();
+            let date = inputDate.value.trim();
+            let price = inputPrice.value.trim();
+
+            if (checkEmptyData(name, brand, date, price)) {
+                alert("Hãy nhập đầy đủ thông tin!");
+                return false;
+            }
+
+            if (!Validate(date)) {
+                alert("Ngày nhập không được lớn hơn ngày hiện tại!");
+                return false;
+            }
+
+            return true;
+        }
+
+        function checkEmptyData(name, brand, date, price) {
+            return name === "" || brand === "" || date === "" || price === "" || price === 0;
+        }
+
+        function Validate(date) {
+            let today = new Date();
+            let inputDate = new Date(date);
+            let dd = inputDate.getDate();
+            let mm = (inputDate.getMonth() + 1);
+            let yy = inputDate.getFullYear();
+
+            let todayDD = today.getDate();
+            let todayMM = today.getMonth() + 1;
+            let todayYY = today.getFullYear();
+
+            if (yy < todayYY) {
+                return true;
+            } else if (yy == todayYY) {
+                if (mm < todayMM) {
+                    return true;
+                } else if (mm == todayMM) {
+                    if (dd < todayDD) {
+                        return true;
+                    } else {
+                        return false;
+                    }
+                } else {
+                    return false;
+                }
+            }
+            return false;
+        }
+    </script>
+</body>
+</html>

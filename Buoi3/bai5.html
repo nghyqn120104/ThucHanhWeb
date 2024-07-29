@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .form {
+            width: 500px;
+            margin: 150px auto;
+            border: 1px solid #000;
+            padding: 20px;
+        }
+
+        .form-group {
+            display: flex;
+            margin: 10px 0px;
+            align-items: center;
+        }
+
+        .form-group p {
+            margin-left: 20px;
+            width: 100px;
+        }
+
+        .announcement {
+            text-align: center; 
+            color: red;
+        }
+
+        .form-out {
+            width: 300px;
+            padding: 6px;
+        }
+
+        .form-btn {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .btn {
+            padding: 6px;
+            margin: 10px;
+        }
+
+        .close {
+            display: none;
+        }
+    </style>
+    <title>Bài 5</title>
+</head>
+
+<body>
+    <div class="main">
+        <form action="" class="form" id="formList">
+            <div class="form-group">
+                <p>Chuỗi</p>
+                <input type="text" id="txtInput" class="form-out">
+            </div>
+
+            <div class="form-group">
+                <p>Danh sách</p>
+                <select onchange="onchangeOption(value)" id="selecter" class="form-out"></select>
+            </div>
+
+            <div class="announcement">
+                <p id="announce"></p>
+            </div>
+            <div class="form-btn">
+                <input onclick="perform()" type="button" value="Thực hiện" class="btn" id="submit">
+                <input onclick="cancel()" type="reset" value="Huỷ" class="btn" id="reset">
+            </div>
+        </form>
+    </div>
+
+    <script>
+        function perform() {
+            let inputString = document.getElementById("txtInput").value;
+            let outputString = document.getElementById("selecter");
+            let stringItems = inputString.split(',');
+            outputString.innerHTML = '';
+            for(let i=0;i<stringItems.length;i++) {
+                let option = document.createElement('option');
+                option.text = stringItems[i].trim();
+                option.setAttribute('value',''+stringItems[i]+'');
+                outputString.add(option);
+            }
+        }
+
+        function onchangeOption(value) {
+            var announcement = document.getElementById("announce");
+            announcement.innerHTML= `Bạn đã chọn ${value}`;
+        }
+
+        function cancel() {
+            let selecter = document.getElementById("selecter")
+            while(selecter.lastElementChild) {
+                selecter.removeChild(selecter.lastElementChild);
+            }
+            document.querySelector('.announcement').classList.add('close');
+        }
+    </script>
+</body>
+
+</html>

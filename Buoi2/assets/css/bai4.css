@@ -1,0 +1,208 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.col-1 {
+    width: 8.33%;
+}
+
+.col-2 {
+    width: 16.66%;
+}
+
+.col-3 {
+    width: 25%;
+}
+
+.col-4 {
+    width: 33.33%;
+}
+
+.col-5 {
+    width: 41.66%;
+}
+
+.col-6 {
+    width: 50%;
+}
+
+.col-7 {
+    width: 58.33%;
+}
+
+.col-8 {
+    width: 66.66%;
+}
+
+.col-9 {
+    width: 75%;
+}
+
+.col-10 {
+    width: 83.33%;
+}
+
+.col-11 {
+    width: 91.66%;
+}
+
+.col-12 {
+    width: 100%;
+}
+
+[class*="col-"] {
+    float: left;
+}
+
+.clearfix:after {
+    content: "";
+    clear: both;
+    display: block;
+}
+
+.main:after {
+    content: "";
+    clear: both;
+    display: block;
+}
+
+.header {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    background-color: skyblue;
+    padding: 18px;
+    width: 100%;
+}
+
+.navbar {
+    width: 100%;
+    background-color: rgb(54, 129, 214);
+    display: flex;
+    justify-content: center;
+}
+
+.nav-menu {
+    width: 80%;
+    float: right;
+}
+
+.nav-drop {
+    height: 60px;
+    position: relative;
+}
+
+.nav-drop:hover {
+    background-color: skyblue;
+    color: #fff;
+}
+
+.nav-drop:hover .nav-list {
+    display: block;
+}
+
+.nav-drop h4 {
+    line-height: 60px;
+    margin: 0;
+    text-align: center;
+}
+
+.nav-list {
+    list-style-type: none;
+    background-color: #fff;
+    color: skyblue;
+    display: none;
+    text-align: center;
+    z-index: 1;
+    margin-block-start: 0;
+    position: absolute;
+    width: 100%;
+}
+
+.nav-list-items:hover {
+    background-color: skyblue;
+    color: #fff;
+}
+
+.nav-list-items {
+    padding: 12px;
+    border: 1px solid #000;
+}
+
+.content {
+    margin-top: 20px;
+}
+
+.search-title {
+    font-size: 14px;
+    padding: 8px;
+}
+
+.searcher {
+    display: flex;
+    justify-content: space-around;
+}
+
+.search-text {
+    margin-left: -8px;
+    padding: 3px;
+    width: 70%;
+}
+
+.search-btn {
+    padding: 4px;
+    width: 15%;
+}
+
+.search-btn:hover {
+    background-color: skyblue;
+}
+
+.border-item {
+    border: 3px solid aqua;
+    margin: 10px;
+}
+
+.border-item p {
+    text-align: center;
+    margin: 0;
+}
+
+.list-item {
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+}
+
+.img {
+    width: 80%;
+}
+
+.footer {
+    margin-top: 10px;
+    background-color: skyblue;
+    padding: 10px;
+    text-align: center;
+}
+
+@media only screen and (max-width: 768px) {
+    [class*="col-"] {
+        width: 100%;
+    }
+    .books-list .col-3 {
+        width: 50%;
+    }
+    .search-part {
+        display: flex;
+        justify-content: space-around;
+    }
+    .search-title {
+        flex: 1.5;
+    }
+    .searcher {
+        flex: 8;
+        display: flex;
+    }
+}

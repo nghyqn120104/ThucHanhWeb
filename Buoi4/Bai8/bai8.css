@@ -1,0 +1,91 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.main {
+    min-height: 1000px;
+    display: flex;
+    justify-content: center;
+}
+
+#table {
+    border: 1px solid #000;
+}
+
+.border-column {
+    padding: 4px 16px;
+    border: 1px solid #000;
+}
+
+.container {
+    min-height: 500px;
+}
+
+.addData {
+    margin-top: 150px;
+    border: 1px solid #000;
+}
+
+.addData-input {
+    margin-top: 20px;
+}
+
+.addData-infor {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 8px;
+}
+
+.title {
+    flex: 1;
+    text-align: center;
+    font-size: 14px;
+    padding: 4px;
+}
+
+.vxl-text {
+    flex: 1;
+    margin-right: 8px;
+    padding: 4px;
+    font-size: 14px;
+}
+
+.date-text {
+    flex: 1;
+    margin-right: 8px;
+    padding: 4px;
+    font-size: 14px;
+}
+
+.brand-text {
+    flex: 1;
+    margin-right: 8px;
+    padding: 4px;
+    font-size: 14px;
+}
+
+.price-text {
+    flex: 1;
+    margin-right: 8px;
+    padding: 4px;
+    font-size: 14px;
+}
+
+.addData-btn {
+    margin: 20px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#btnAdd {
+    font-size: 14px;
+    padding: 8px;
+}
+
+#btnCancel {
+    font-size: 14px;
+    padding: 8px;
+}

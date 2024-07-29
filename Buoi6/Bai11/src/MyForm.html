@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .content {
+            text-align: center;
+        }
+
+        table {
+            margin: auto;
+        }
+
+        td {
+            padding: 8px;
+        }
+
+        table, td {
+            border: 1px solid #333;
+            border-collapse: collapse;
+        }
+
+        .handlingBtn {
+            margin-top: 16px;
+        }
+    </style>
+</head>
+<body>
+    <form action="./XuLy.aspx" method="post" onsubmit="return checkValid()">
+        <div class="content">
+            <div class="title"><h2>Thêm thông tin nhân viên mới</h2></div>
+            <div class="inp">
+                <table>
+                    <tr>
+                        <td class="empName">Họ tên: </td>
+                        <td><input type="text" name="empName" id="empName" required="required"></td>
+                    </tr>
+                    <tr>
+                        <td class="empBirth">Ngày sinh: </td>
+                        <td><input type="date" name="empBirth" id="empBirth" required="required"></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="handlingBtn">
+                <p id="notification" style="color: red; text-transform: uppercase; font-style: italic;"></p>
+                <input type="submit" value="Thêm">
+                <input type="reset" value="Hủy">
+            </div>
+        </div>
+    </form>
+
+    <script>
+        let inpBirth = document.getElementById("empBirth");
+        let notification = document.getElementById("notification");
+        function checkValid() {
+            let now = new Date();
+            let birth = new Date(inpBirth.value);
+            if (now.getFullYear() - birth.getFullYear() < 18) {
+                notification.innerHTML = "Chưa đủ 18 tuổi";
+                return false;
+            } else {
+                return true;
+            }
+        }
+    </script>
+</body>
+</html>
